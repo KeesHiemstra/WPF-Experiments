@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WeekNumber_1903402;
 
 namespace WeekNumber_1903602
 {
@@ -23,11 +24,29 @@ namespace WeekNumber_1903602
     public MainWindow()
     {
       InitializeComponent();
+      Date.SelectedDate = DateTime.Now;
+      GetWeekNumber();
     }
 
+    private void GetWeekNumber()
+    {
+      DateTimeWeekNumber dwn = new DateTimeWeekNumber(Date.SelectedDate.Value);
+      WeekNumber.Text = dwn.WeekNoCompact;
+    }
+    
     private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
     {
+      GetWeekNumber();
+    }
 
+    private void ButtonCopy_Click(object sender, RoutedEventArgs e)
+    {
+      Clipboard.SetText(WeekNumber.Text);
+    }
+
+    private void Date_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+      GetWeekNumber();
     }
   }
 }
