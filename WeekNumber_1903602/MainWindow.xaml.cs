@@ -31,20 +31,21 @@ namespace WeekNumber_1903602
     private void GetWeekNumber()
     {
       DateTimeWeekNumber dwn = new DateTimeWeekNumber(Date.SelectedDate.Value);
-      WeekNumber.Text = dwn.WeekNoCompact;
+      WeekNumber.Text = dwn.WeekNoCompact; //19041
+      Reference.Text = $"{WeekNumber.Text}00"; //1904100
     }
     
-    private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
-    {
-      GetWeekNumber();
-    }
-
-    private void ButtonCopy_Click(object sender, RoutedEventArgs e)
+    private void ButtonCopyWeekNumber_Click(object sender, RoutedEventArgs e)
     {
       Clipboard.SetText(WeekNumber.Text);
     }
 
-    private void Date_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+    private void ButtonCopyReference_Click(object sender, RoutedEventArgs e)
+    {
+      Clipboard.SetText(Reference.Text);
+    }
+
+    private void Date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
     {
       GetWeekNumber();
     }
