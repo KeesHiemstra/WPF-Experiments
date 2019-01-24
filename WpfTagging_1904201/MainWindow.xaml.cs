@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using System.IO;
 using CHiDateTimeWeekNumber;
 using System.ComponentModel;
+using System.Linq;
 
 namespace WpfTagging_1904201
 {
@@ -38,6 +39,11 @@ namespace WpfTagging_1904201
         DataGridProject.Columns[0].SortDirection = ListSortDirection.Descending;
       }
       DataGridProject.DataContext = Projects;
+    }
+
+    private void DisplayWeekNoCompact()
+    {
+
     }
 
     private void FileExit()
@@ -73,7 +79,30 @@ namespace WpfTagging_1904201
       DateTimeWeekNumber dwn = new DateTimeWeekNumber(DatePickerProjectDate.SelectedDate.Value);
       SelectedWeekNoCompact = dwn.WeekNoCompact;
 
-      //Todo: Recalculate the last count for the date
+      int SelectedWeekNoCount = GetMaximumCount(SelectedWeekNoCompact);
+
+      CurrentWeekNoCompact.Text = $"WeekRef: {SelectedWeekNoCompact}";
+      CurrentWeekNoCount.Text = $"Max: {SelectedWeekNoCount}";
+    }
+
+    private int GetMaximumCount(string selectedWeekNoCompact)
+    {
+      int result = 0;
+
+      if (Projects == null)
+      {
+        return result;
+      }
+
+      var select = from s in Projects
+                   where s.WeekNoCompact == selectedWeekNoCompact
+                   select s.Count;
+      if (select.Count() != 0)
+      {
+        result = select.Max();
+      }
+
+      return result;
     }
 
     private string GetJsonFileName(string FileName)
