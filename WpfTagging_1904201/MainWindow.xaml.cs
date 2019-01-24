@@ -74,6 +74,8 @@ namespace WpfTagging_1904201
     {
       DateTimeWeekNumber dwn = new DateTimeWeekNumber(DatePickerProjectDate.SelectedDate.Value);
       SelectedWeekNoCompact = dwn.WeekNoCompact;
+
+      //Todo: Recalculate the last count for the date
     }
 
     private string GetJsonFileName(string FileName)
@@ -96,6 +98,11 @@ namespace WpfTagging_1904201
     private void ButtonProjectAdd_Click(object sender, RoutedEventArgs e)
     {
       ProjectAdd();
+    }
+
+    private void MenuItemDataRefresh_Click(object sender, RoutedEventArgs e)
+    {
+      UpdateDataGridProjects();
     }
 
     private void MenuItemFileExit_Click(object sender, RoutedEventArgs e)

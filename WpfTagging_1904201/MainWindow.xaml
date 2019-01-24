@@ -52,6 +52,10 @@
                 <MenuItem Header="E_xit"
                           Click="MenuItemFileExit_Click"/>
             </MenuItem>
+            <MenuItem Header="_Data">
+                <MenuItem Header="_Refresh"
+                          Click="MenuItemDataRefresh_Click"/>
+            </MenuItem>
             <MenuItem Header="_?">
                 <MenuItem Header="_About"
                           Click="MenuItemHelpAbout_Click"/>
