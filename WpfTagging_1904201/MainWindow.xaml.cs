@@ -20,10 +20,8 @@ namespace WpfTagging_1904201
 
     public MainWindow()
     {
-      Projects.Add(new Project {WeekNoCompact = "19042", Count = 1, ProjectName = "WpfTagging" });
-      Projects.Add(new Project { WeekNoCompact = "19043", Count = 1, ProjectName = "Document version", Title = "cv - Kees Hiemstra - nl punt" });
-      Projects.Add(new Project { WeekNoCompact = "19043", Count = 2, ProjectName = "Document version", Title = "cv - Kees Hiemstra - nl" });
-      Projects.Add(new Project { WeekNoCompact = "19034", Count = 2, ProjectName = "DiscoverDate", Title = "WeekNumber" });
+      FileOpen();
+
       InitializeComponent();
 
       DatePickerProjectDate.SelectedDate = DateTime.Now;
