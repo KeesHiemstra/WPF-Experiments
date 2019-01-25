@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 using WpfTagging_1904201.Models;
 
 namespace WpfTagging_1904201
@@ -38,14 +28,14 @@ namespace WpfTagging_1904201
       ProjectName.Focus();
     }
 
-    private void ButtonSave_Click(object sender, RoutedEventArgs e)
+    private void ButtonCancel_Click(object sender, RoutedEventArgs e)
     {
-      windowsArgs.Save = true;
       Close();
     }
 
-    private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+    private void ButtonSave_Click(object sender, RoutedEventArgs e)
     {
+      windowsArgs.Save = true;
       Close();
     }
 
@@ -64,10 +54,9 @@ namespace WpfTagging_1904201
     }
   }
 
- public class ProjectWindowsArgs
+  public class ProjectWindowsArgs
   {
-    public bool Save { get; set; }
-
     public Project ProjectScreen { get; set; }
+    public bool Save { get; set; }
   }
 }

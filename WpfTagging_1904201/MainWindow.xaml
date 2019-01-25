@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTagging_1904201"
         mc:Ignorable="d"
-        Title="Project references" Height="450" Width="500">
+        Title="Project references" Height="450" Width="550">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5"/>
