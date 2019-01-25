@@ -35,5 +35,25 @@ namespace WpfTagging_1904201.Models
     /// e.g.
     /// </summary>
     public string Title { get; set; }
+
+    public Project Copy()
+    {
+      Project copy = new Project();
+      copy = (Project)this.MemberwiseClone();
+
+      return copy;
+    }
+
+    public static Project CopyX(Project copy)
+    {
+      Project Backup = new Project
+      {
+        WeekNoCompact = copy.WeekNoCompact,
+        Count = copy.Count,
+        ProjectName = copy.ProjectName,
+        Title = copy.Title
+      };
+      return Backup;
+    }
   }
 }

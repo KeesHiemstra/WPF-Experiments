@@ -8,6 +8,7 @@ using System.IO;
 using CHiDateTimeWeekNumber;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Controls;
 
 namespace WpfTagging_1904201
 {
@@ -17,7 +18,10 @@ namespace WpfTagging_1904201
   public partial class MainWindow : Window
   {
     private ObservableCollection<Project> Projects = new ObservableCollection<Project>();
-    private string SelectedWeekNoCompact;
+    private ProjectWindowsArgs windowArgs = new ProjectWindowsArgs();
+
+    public string SelectedWeekNoCompact;
+    public int SelectedWeekNoMaxumumCount;
 
     public MainWindow()
     {
@@ -41,11 +45,6 @@ namespace WpfTagging_1904201
       DataGridProject.DataContext = Projects;
     }
 
-    private void DisplayWeekNoCompact()
-    {
-
-    }
-
     private void FileExit()
     {
       this.Close();
@@ -62,7 +61,9 @@ namespace WpfTagging_1904201
 
     private void FileSave()
     {
-      string json = JsonConvert.SerializeObject(Projects, Formatting.Indented);
+      var Sorted = Projects.OrderByDescending(m => m.WeekNoReference);
+      //string json = JsonConvert.SerializeObject(Projects, Formatting.Indented);
+      string json = JsonConvert.SerializeObject(Sorted, Formatting.Indented);
       using (StreamWriter stream = new StreamWriter(GetJsonFileName("Projects")))
       {
         stream.Write(json);
@@ -71,7 +72,44 @@ namespace WpfTagging_1904201
 
     private void ProjectAdd()
     {
-      throw new NotImplementedException();
+      Project project = new Project
+      {
+        WeekNoCompact = SelectedWeekNoCompact,
+        Count = SelectedWeekNoMaxumumCount + 1
+      };
+
+      windowArgs.Save = false;
+      ProjectWindow window = new ProjectWindow(project, windowArgs);
+      window.ShowDialog();
+
+      if (!windowArgs.Save)
+      {
+        //Cancelled
+        return;
+      }
+
+      Projects.Add(windowArgs.ProjectScreen);
+      ProjectDate_SelectedDateChanged();
+    }
+
+    private void ProjectEdit(Project project)
+    {
+      windowArgs.Save = false;
+      ProjectWindow window = new ProjectWindow(project, windowArgs);
+      window.ShowDialog();
+
+      if (!windowArgs.Save)
+      {
+        return;
+      }
+
+      int Counter = 0;
+      while (Projects[Counter].WeekNoReference != windowArgs.ProjectScreen.WeekNoReference &&
+        Counter < Projects.Count)
+      {
+        Counter++;
+      }
+      Projects[Counter] = windowArgs.ProjectScreen;
     }
 
     private void ProjectDate_SelectedDateChanged()
@@ -79,13 +117,13 @@ namespace WpfTagging_1904201
       DateTimeWeekNumber dwn = new DateTimeWeekNumber(DatePickerProjectDate.SelectedDate.Value);
       SelectedWeekNoCompact = dwn.WeekNoCompact;
 
-      int SelectedWeekNoCount = GetMaximumCount(SelectedWeekNoCompact);
+      SelectedWeekNoMaxumumCount = GetSelectedWeekNoMaxumumCount(SelectedWeekNoCompact);
 
       CurrentWeekNoCompact.Text = $"WeekRef: {SelectedWeekNoCompact}";
-      CurrentWeekNoCount.Text = $"Max: {SelectedWeekNoCount}";
+      CurrentWeekNoCount.Text = $"Max: {SelectedWeekNoMaxumumCount}";
     }
 
-    private int GetMaximumCount(string selectedWeekNoCompact)
+    private int GetSelectedWeekNoMaxumumCount(string selectedWeekNoCompact)
     {
       int result = 0;
 
@@ -122,6 +160,7 @@ namespace WpfTagging_1904201
       MessageBox.Show($"Version: {version}", "About");
     }
 
+    #region Buttons and MenuItems
     private void ButtonProjectAdd_Click(object sender, RoutedEventArgs e)
     {
       ProjectAdd();
@@ -155,6 +194,15 @@ namespace WpfTagging_1904201
     private void DatePickerProjectDate_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
       ProjectDate_SelectedDateChanged();
+    }
+    #endregion
+
+    private void DataGridProject_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+      object SelectedRow = ((DataGrid)e.Source).CurrentItem;
+      Project Edit = (Project)SelectedRow;
+
+      ProjectEdit(Edit);
     }
 
   }
