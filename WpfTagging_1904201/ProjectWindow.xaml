@@ -10,7 +10,7 @@
         Width="380" 
         ShowInTaskbar="False" 
         Topmost="True" 
-        WindowStyle="None">
+        WindowStyle="SingleBorderWindow">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5"/>
@@ -38,6 +38,7 @@
                    FontSize="24"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
+                   Name="Title"
                    Text="Project"/>
         <TextBlock Grid.Column="1"
                    Grid.Row="2"

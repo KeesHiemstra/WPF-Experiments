@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CHiDateTimeWeekNumber;
+using System.Windows;
 using System.Windows.Controls;
 
 using WpfTagging_1904201.Models;
@@ -24,6 +25,7 @@ namespace WpfTagging_1904201
 
       InitializeComponent();
 
+      Title.Text += $" {DateTimeWeekNumber.WeekNoCompactToDate(projectScreen.WeekNoCompact).Value.ToString("yyyy-MM-dd")}";
       ButtonSave.IsEnabled = !string.IsNullOrWhiteSpace(ProjectName.Text);
       ProjectName.Focus();
     }
