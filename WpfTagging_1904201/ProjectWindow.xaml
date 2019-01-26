@@ -20,14 +20,16 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="Auto"/> <!-- Title -->
+            <RowDefinition Height="Auto"/>
+            <!-- Title -->
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/> <!-- Button -->
+            <RowDefinition Height="Auto"/>
+            <!-- Button -->
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
@@ -70,7 +72,14 @@
                    Grid.Row="2"
                    Margin="0,0,0,5"
                    VerticalAlignment="Center"
-                   Text="{Binding Path=WeekNoCompact}"/>
+                   Text="{Binding Path=WeekNoCompact}">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_Copy"
+                          Click="MenuItemWeerkNoCompactCopy_Click"/>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
         <TextBlock Name="WeekNumberCount"
                    Grid.Column="2"
                    Grid.Row="3"
@@ -108,6 +117,6 @@
                     Click="ButtonCancel_Click"
                     Margin="0,0,5,0"/>
         </StackPanel>
-        
+
     </Grid>
 </Window>

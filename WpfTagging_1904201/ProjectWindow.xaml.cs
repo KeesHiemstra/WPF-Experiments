@@ -54,6 +54,11 @@ namespace WpfTagging_1904201
       }
       ButtonSave.IsEnabled = !string.IsNullOrWhiteSpace(ProjectName.Text);
     }
+
+    private void MenuItemWeerkNoCompactCopy_Click(object sender, RoutedEventArgs e)
+    {
+      Clipboard.SetText(WeekNumber.Text);
+    }
   }
 
   public class ProjectWindowsArgs
