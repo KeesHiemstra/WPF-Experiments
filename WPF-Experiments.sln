@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1904201", "WpfTagging_1904201\WpfApp-1904201.csproj", "{77B0881A-9629-4C5A-917F-522AE811EBE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1904201", "WpfApp-1904201\WpfApp-1904201.csproj", "{77B0881A-9629-4C5A-917F-522AE811EBE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1908401", "WpfApp1908401\WpfApp-1908401.csproj", "{E274E818-A4D7-4212-BA1B-484AFAA40852}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1908401", "WpfApp-1908401\WpfApp-1908401.csproj", "{E274E818-A4D7-4212-BA1B-484AFAA40852}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IObserverExpiriment", "IObserverExpiriment\IObserverExpiriment.csproj", "{BCD211F9-D898-4936-9777-C39E147D0BA6}"
 EndProject
