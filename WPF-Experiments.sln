@@ -5,11 +5,13 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTagging_1904201", "WpfTagging_1904201\WpfTagging_1904201.csproj", "{77B0881A-9629-4C5A-917F-522AE811EBE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1908401", "WpfApp1908401\WpfApp1908401.csproj", "{E274E818-A4D7-4212-BA1B-484AFAA40852}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1908401", "WpfApp1908401\WpfApp-1908401.csproj", "{E274E818-A4D7-4212-BA1B-484AFAA40852}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IObserverExpiriment", "IObserverExpiriment\IObserverExpiriment.csproj", "{BCD211F9-D898-4936-9777-C39E147D0BA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleList", "SimpleList\SimpleList.csproj", "{36EBCD75-0994-4125-A3A0-A2E32CBB4C92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1909401", "WpfApp-1909401\WpfApp-1909401.csproj", "{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{36EBCD75-0994-4125-A3A0-A2E32CBB4C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36EBCD75-0994-4125-A3A0-A2E32CBB4C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36EBCD75-0994-4125-A3A0-A2E32CBB4C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
