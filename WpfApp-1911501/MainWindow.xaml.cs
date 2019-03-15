@@ -21,7 +21,7 @@ namespace WpfApp_1911501
   /// </summary>
   public partial class MainWindow : Window
   {
-    Win32_BIOS_List BIOS = new Win32_BIOS_List("Win32_BIOS");
+    Win32_BIOS_List BIOS = new Win32_BIOS_List("Win32_BIOS", "Manufacturer,SerialNumber,SMBIOSBIOSVersion");
 
     public MainWindow()
     {
