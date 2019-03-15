@@ -70,11 +70,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Win32_BIOS.cs" />
-    <Compile Include="Models\Win32_BIOS_List.cs" />
-    <Compile Include="Models\WmiList.cs" />
-    <Compile Include="Models\WmiProperty.cs" />
-    <Compile Include="Models\WmiRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,5 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITAMLib\ITAMLib.csproj">
+      <Project>{2CCCBFC2-96E5-405A-9FC4-07078F1C272D}</Project>
+      <Name>ITAMLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

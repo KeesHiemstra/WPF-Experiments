@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ITAMLib.Models;
+using System;
 using System.Collections.Generic;
 using System.Management;
 using System.Windows;
 
-namespace WpfApp_1911501.Models
+namespace ITAMLib.Models
 {
   public class Win32_BIOS_List
   {
