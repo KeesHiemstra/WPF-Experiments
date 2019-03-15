@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleList", "SimpleList\Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1909401", "WpfApp-1909401\WpfApp-1909401.csproj", "{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1911501", "WpfApp-1911501\WpfApp-1911501.csproj", "{92A07A01-AD01-4272-9AC5-4219C1547422}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27A0BE4E-0F83-4561-A587-4366CCCE2CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A07A01-AD01-4272-9AC5-4219C1547422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A07A01-AD01-4272-9AC5-4219C1547422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A07A01-AD01-4272-9AC5-4219C1547422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A07A01-AD01-4272-9AC5-4219C1547422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
