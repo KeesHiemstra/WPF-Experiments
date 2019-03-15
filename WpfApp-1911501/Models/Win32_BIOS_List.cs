@@ -10,32 +10,19 @@ namespace WpfApp_1911501.Models
     public string ComputerName { get; set; }
     public List<Win32_BIOS> Items = new List<Win32_BIOS>();
 
-    public Win32_BIOS_List(string WmiClass)
+    public Win32_BIOS_List(string WmiClass, string members)
     {
       ComputerName = System.Environment.MachineName;
-      CollectWmiClass(WmiClass);
+      CollectWmiClass(WmiClass, members);
     }
 
-    private void CollectWmiClass(string wmiClass)
+    private void CollectWmiClass(string wmiClass, string members)
     {
       Items.Clear();
 
-      ConnectionOptions options = new ConnectionOptions();
-      options.Impersonation = System.Management.ImpersonationLevel.Impersonate;
-
-      ManagementScope scope = new ManagementScope("\\\\.\\root\\cimv2", options);
-      scope.Connect();
-
-      //Query system for Operating System information
-      ObjectQuery query = new ObjectQuery($"SELECT * FROM {wmiClass}");
-
-      ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
-
-      ManagementObjectCollection queryCollection = searcher.Get();
-
       try
       {
-        foreach (ManagementObject managementObject in queryCollection)
+        foreach (ManagementObject managementObject in WmiList.GetCollection(wmiClass, members))
         {
           WmiRecord record = new WmiRecord();
           foreach (PropertyData propertyData in managementObject.Properties)

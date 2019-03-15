@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Models\Win32_BIOS.cs" />
     <Compile Include="Models\Win32_BIOS_List.cs" />
+    <Compile Include="Models\WmiList.cs" />
     <Compile Include="Models\WmiProperty.cs" />
     <Compile Include="Models\WmiRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
