@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Win32_BIOS.cs" />
+    <Compile Include="Models\Win32_BIOS_List.cs" />
+    <Compile Include="Models\WmiProperty.cs" />
+    <Compile Include="Models\WmiRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:WpfApp_1911501"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+  <Grid Margin="10">
+    <WrapPanel>
+      <Border>
+        <StackPanel Orientation="Vertical">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Computer name: "/>
+            <TextBlock Text="{Binding ComputerName}"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Serial number: "/>
+            <TextBlock Text="{Binding SerialNumber}"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Manufacturer: "/>
+            <TextBlock Text="{Binding Manufacturer}"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Manufacturer: "/>
+            <TextBlock Text="{Binding SMBIOSBIOSVersion}"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </WrapPanel>
+  </Grid>
 </Window>
