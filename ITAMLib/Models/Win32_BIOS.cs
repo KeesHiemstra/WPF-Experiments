@@ -1,9 +1,10 @@
-﻿using System.Linq;
+﻿using ITAMLib.Models;
+using System.Linq;
 using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp_1911501.Models
+namespace ITAMLib.Models
 {
   public class Win32_BIOS
   {
