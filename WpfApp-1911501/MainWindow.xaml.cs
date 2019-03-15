@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp_1911501.Models;
 
 namespace WpfApp_1911501
 {
@@ -20,9 +21,14 @@ namespace WpfApp_1911501
   /// </summary>
   public partial class MainWindow : Window
   {
+    Win32_BIOS_List BIOS = new Win32_BIOS_List("Win32_BIOS");
+
     public MainWindow()
     {
       InitializeComponent();
+
+      DataContext = BIOS.Items;
+      
     }
   }
 }
