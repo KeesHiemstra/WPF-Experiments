@@ -11,15 +11,22 @@ namespace ITAMLib.Models
   {
     public Dictionary<string, string> Properties = new Dictionary<string, string>();
 
-    public WmiRecord()
+    public WmiRecord(string members)
     {
-
+      foreach (var item in members.Split(','))
+      {
+        Properties.Add(item, "<n/a>");
+      }
     }
 
-    public void ProcessProperty(PropertyData data)
+    public async Task ProcessProperty(PropertyData data)
     {
       WmiProperty property = new WmiProperty(data);
-      Properties.Add(property.Name, property.Value);
+      try
+      {
+        Properties[property.Name] = property.Value;
+      }
+      catch { }
     } 
   }
 }

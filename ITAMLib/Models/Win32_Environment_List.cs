@@ -1,17 +1,19 @@
-﻿using ITAMLib.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace ITAMLib.Models
 {
-  public class Win32_BIOS_List
+  public class Win32_Environment_List
   {
     public string ComputerName { get; set; }
-    public List<Win32_BIOS> Items = new List<Win32_BIOS>();
+    public List<Win32_Environment> Items = new List<Win32_Environment>();
 
-    public Win32_BIOS_List(string WmiClass, string members)
+    public Win32_Environment_List(string WmiClass, string members)
     {
       ComputerName = System.Environment.MachineName;
       CollectWmiClass(WmiClass, members);
@@ -30,7 +32,7 @@ namespace ITAMLib.Models
           {
             record.ProcessProperty(propertyData);
           }
-          Items.Add(new Win32_BIOS(record));
+          Items.Add(new Win32_Environment(record));
         }
       }
       catch (Exception ex)
