@@ -5,29 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_1911501"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
   <Grid Margin="10">
-    <WrapPanel>
-      <Border>
-        <StackPanel Orientation="Vertical">
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Computer name: "/>
-            <TextBlock Text="{Binding ComputerName}"/>
-          </StackPanel>
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Serial number: "/>
-            <TextBlock Text="{Binding SerialNumber}"/>
-          </StackPanel>
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Manufacturer: "/>
-            <TextBlock Text="{Binding Manufacturer}"/>
-          </StackPanel>
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Manufacturer: "/>
-            <TextBlock Text="{Binding SMBIOSBIOSVersion}"/>
-          </StackPanel>
-        </StackPanel>
-      </Border>
-    </WrapPanel>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    
+    <StackPanel Orientation="Horizontal" Margin="0,0,5,0">
+      <TextBlock Text="Items: "/>
+      <TextBlock Text="{Binding ItemCount}" Margin="0,0,5,0"/>
+      <TextBlock Text="{Binding RunTime}"/>
+    </StackPanel>
+
+    <DataGrid Name="SoftwareDataGrid"
+              ItemsSource="{Binding}"
+              Grid.Row="1">
+      
+    </DataGrid>
   </Grid>
 </Window>

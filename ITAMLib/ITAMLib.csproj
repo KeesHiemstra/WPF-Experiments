@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Logging.cs" />
+    <Compile Include="Models\Win32_Account.cs" />
+    <Compile Include="Models\Win32_Account_List.cs" />
     <Compile Include="Models\Win32_BIOS.cs" />
     <Compile Include="Models\Win32_BIOS_List.cs" />
+    <Compile Include="Models\Win32_Environment.cs" />
+    <Compile Include="Models\Win32_Environment_List.cs" />
+    <Compile Include="Models\Win32_OperatingSystem.cs" />
+    <Compile Include="Models\Win32_OperatingSystem_List.cs" />
+    <Compile Include="Models\Win32_Product.cs" />
+    <Compile Include="Models\Win32_Product_List.cs" />
     <Compile Include="Models\WmiList.cs" />
     <Compile Include="Models\WmiProperty.cs" />
     <Compile Include="Models\WmiRecord.cs" />

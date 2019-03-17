@@ -16,14 +16,17 @@ namespace ITAMLib.Models
 
     public static ManagementObjectCollection GetCollection(string wmiClass, string Members)
     {
-      ConnectionOptions options = new ConnectionOptions();
-      options.Impersonation = System.Management.ImpersonationLevel.Impersonate;
+      ConnectionOptions options = new ConnectionOptions
+      {
+        Impersonation = ImpersonationLevel.Impersonate
+      };
 
       ManagementScope scope = new ManagementScope("\\\\.\\root\\cimv2", options);
       scope.Connect();
 
       //Query system for Operating System information
-      ObjectQuery query = new ObjectQuery($"SELECT {Members} FROM {wmiClass}");
+      //ObjectQuery query = new ObjectQuery($"SELECT {Members} FROM {wmiClass}");
+      ObjectQuery query = new ObjectQuery($"SELECT * FROM {wmiClass}");
 
       ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
 
