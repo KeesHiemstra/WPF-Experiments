@@ -1,7 +1,9 @@
 ﻿using ITAMLib.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -42,6 +44,34 @@ namespace WpfApp_1911501
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
       await GetWin32_Product();
+      await SaveSoftwareList();
+    }
+
+    private async Task SaveSoftwareList()
+    {
+      string FileName = $"C:\\Etc\\ITAM\\{win32_Product.ComputerName}-Software.csv";
+      IEnumerable<string> Headers = typeof(Win32_Product).GetProperties().Select(i => i.Name);
+
+      using (StreamWriter stream = new StreamWriter(FileName))
+      {
+        await stream.WriteLineAsync(string.Join("\t", Headers));
+        foreach (Win32_Product Line in win32_Product.Items)
+        {
+          bool FirstField = true;
+          PropertyInfo[] properties = Line.GetType().GetProperties();
+
+          foreach (var property in properties)
+          {
+            if (!FirstField)
+            {
+              await stream.WriteAsync("\t");
+            }
+            await stream.WriteAsync(property.GetValue(Line, null).ToString());
+            FirstField = false;
+          }
+          await stream.WriteLineAsync();
+        }
+      }
     }
 
     private async Task GetWin32_Product()
