@@ -29,6 +29,7 @@ namespace WpfApp_1911501
     //public Win32_Account_List win32_Account = new Win32_Account_List("Win32_Account", "AccountType,Caption,Description,Disabled,Domain,FullName,InstallDate,LocalAccount,Lockout,Name,PasswordChangeable,PasswordExpires,PasswordRequired,SID,SIDType,Status");
     //public Win32_Environment_List win32_Environment = new Win32_Environment_List("Win32_Environment", "Name,SystemVariable,UserName,VariableValue");
 
+    //private List<string> jobs = new List<string>();
     private static DateTime Start = DateTime.Now;
 
     public int ItemCount { get { return win32_Product.Items.Count; } }
@@ -43,6 +44,7 @@ namespace WpfApp_1911501
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
+
       await GetWin32_Product();
       await SaveSoftwareList();
     }
