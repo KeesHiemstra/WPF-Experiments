@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1911501", "WpfApp-19
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITAMLib", "ITAMLib\ITAMLib.csproj", "{2CCCBFC2-96E5-405A-9FC4-07078F1C272D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-1912101", "WpfApp-1912101\WpfApp-1912101.csproj", "{455DB3AC-3D2B-432E-B719-DB6D10C8E506}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{2CCCBFC2-96E5-405A-9FC4-07078F1C272D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CCCBFC2-96E5-405A-9FC4-07078F1C272D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CCCBFC2-96E5-405A-9FC4-07078F1C272D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455DB3AC-3D2B-432E-B719-DB6D10C8E506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455DB3AC-3D2B-432E-B719-DB6D10C8E506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455DB3AC-3D2B-432E-B719-DB6D10C8E506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455DB3AC-3D2B-432E-B719-DB6D10C8E506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
